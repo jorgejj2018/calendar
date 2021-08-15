@@ -7,7 +7,7 @@ export const listarFechas = () => (dispatch) => {
           const dataDocument = doc.data();
           return { ...dataDocument, id: doc.id };
         });
-        console.log(data)
+        //console.log(data)
         dispatch({ type: 'listarFechas', payload: data });
       });
   };
@@ -19,7 +19,7 @@ export const listarFechas = () => (dispatch) => {
           const dataDocument = doc.data();
           return { ...dataDocument, id: doc.id };
         });
-        console.log(data)
+        //console.log(data)
         dispatch({ type: 'listarEvents', payload: data });
       });
   };

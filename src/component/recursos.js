@@ -78,3 +78,18 @@ const prueba = [
 
 
 */
+
+
+/*         let dia = new Date().getDate()
+        let horaActual = new Date().getHours()
+        let minutoActual = new Date().getMinutes()
+        let hora = `${dia}:${horaActual}:${minutoActual}`
+
+        let diaFinal = new Date(el.event.endStr).getDate()
+        let horaFinal = new Date(el.event.endStr).getHours()
+        let minutoFinal= new Date(el.event.endStr).getMinutes()
+        let fechaFinal = `${diaFinal}:${horaFinal}:${minutoFinal}`
+        hora > fechaFinal ? el.event.remove() :  console.log("fecha habil")
+        
+        console.log(el)
+        console.log(hora ,fechaFinal) */

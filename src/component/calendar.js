@@ -15,12 +15,13 @@ import { useSelector } from 'react-redux'
 
 const Calendar = () => {
 
-    const sprint = useSelector(state => state.sprint.sprint)
-    const events = useSelector(state => state.sprint.allEvents)
+    let sprint = useSelector(state => state.sprint.sprint)
+    let events = useSelector(state => state.sprint.allEvents)
 
-    const allList = sprint.concat(events)
+    let allList = sprint.concat(events)
 
-    console.log(events)
+
+    console.log(allList)
 
     const dispatch = useDispatch()
     useEffect(() => {
@@ -34,21 +35,8 @@ const Calendar = () => {
       : alert("Deseas ir el evento") // logica para hacer si existe una url
     }
     const handleDidMount = (el) =>{
-        //console.log(el)
-        let dia = new Date().getDate()
-        let horaActual = new Date().getHours()
-        let minutoActual = new Date().getMinutes()
-        let hora = `${dia}:${horaActual}:${minutoActual}`
-
-        let diaFinal = new Date(el.event.endStr).getDate()
-        let horaFinal = new Date(el.event.endStr).getHours()
-        let minutoFinal= new Date(el.event.endStr).getMinutes()
-        let fechaFinal = `${diaFinal}:${horaFinal}:${minutoFinal}`
-        hora > fechaFinal ? el.event.remove() :  console.log("fecha habil")
-
-        //console.log(hora ,fechaFinal  )
+        console.log(el)
     }
-    //console.log(calendar.map(el=> console.log(el.end)))
     return (
         <div>
             <h1>Calendar GeekPlatform</h1>
@@ -61,7 +49,7 @@ const Calendar = () => {
             }}
             plugins={[dayGridPlugin,interactionPlugin,timeGridPlugin,listPlugin]} // plugins
             weekends={true} // para mostrar los dias de fines de semana
-            events={allList} 
+            events={allList}
             eventClick = {handleEvent} // darle click a un evento hacer una accion 
             editable={true} //para moverlo
             locales = {esLocale} //idioma pack

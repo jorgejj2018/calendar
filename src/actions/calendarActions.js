@@ -12,6 +12,8 @@ export const listarFechas = () => (dispatch) => {
       });
   };
 
+
+  //listar eventos "#"
   export const listarEvents = () => (dispatch) => {
     db.collection('eventos').get()
       .then((snapshot) => {
@@ -25,7 +27,7 @@ export const listarFechas = () => (dispatch) => {
   };
 
 
-
+//crear eventos programados "#" cambiar el (db.collection('eventos').add(data)) por la funcion requerida de firebase function 
   export const createNewEvent = (title,start,end,description) => async (dispatch, getState) => {
     try {
       if (Date.parse(start) > Date.parse(end)) {
@@ -47,39 +49,3 @@ export const listarFechas = () => (dispatch) => {
     }
   
   };
-
-/*   export const getFirestoreSprints = (corteId, salonId) => async (dispatch, getState) => {
-    db.collection(`/cortes/${corteId}/sprints`).where('salonId', '==', salonId).get()
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => {
-          const dataDocument = doc.data();
-          return { ...dataDocument, id: doc.id };
-        });
-        dispatch({ type: 'getFirestoreSprints', payload: data });
-      })
-      .catch((err) => console.log(err));
-  };
-  
-  export const deleteSprint = (id, corteId) => async (dispatch) => {
-    try {
-      await db.collection(`/cortes/${corteId}/sprints`).doc(id).delete();
-      alert('sprint eliminado');
-      dispatch({ type: 'deleteSprint', payload: id });
-    } catch (error) {
-      alert('ha habido un error');
-      console.log(error);
-    }
-  
-  };
-  
-  export const getFirestoreAllSprints = (corteId) => async (dispatch, getState) => {
-    db.collection('cortes').doc(corteId).collection('sprints').get()
-      .then((snapshot) => {
-        const data = snapshot.docs.map((doc) => {
-          const dataDocument = doc.data();
-          return { ...dataDocument, id: doc.id };
-        });
-        dispatch({ type: 'getFirestoreAllSprints', payload: data });
-      })
-      .catch((err) => console.log(err));
-  }; */

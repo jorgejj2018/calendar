@@ -16,6 +16,8 @@ export const CalendarReducer = (state = initialState , action) => {
     }
 };
 
+
+// "#" reducer crear evento programado 
 export const CreateEvents = (state = initialState , action) =>{
     switch (action.type) {
         case 'newEventCreated':

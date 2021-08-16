@@ -76,11 +76,15 @@ const prueba = [
                 // more events ...
               ] 
 
+              
+              */
+             
 
-*/
 
-
-/*         let dia = new Date().getDate()
+             
+             /*         
+             eventDidMount={handleDidMount} 
+             let dia = new Date().getDate()
         let horaActual = new Date().getHours()
         let minutoActual = new Date().getMinutes()
         let hora = `${dia}:${horaActual}:${minutoActual}`
